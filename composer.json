@@ -1,42 +1,44 @@
 {
-    "name": "rediska/rediska",
-    "description": "Full-featured PHP client for key-value database Redis",
-    "authors": [
+    "name":"rediska/rediska",
+    "description":"Full-featured PHP client for key-value database Redis",
+    "authors":[
         {
-            "name": "Ivan Shumkov",
-            "email": "ivan@shumkov.ru"
+            "name":"Ivan Shumkov",
+            "email":"ivan@shumkov.ru"
         },
         {
-            "name": "Maxim Ivanov",
-            "email": "maximiv@gmail.com"
+            "name":"Maxim Ivanov",
+            "email":"maximiv@gmail.com"
         },
         {
-            "name": "Ryan Grenz",
-            "email": "info@ryangrenz.com"
+            "name":"Ryan Grenz",
+            "email":"info@ryangrenz.com"
         },
         {
-            "name": "Till Klampaeckel",
-            "email": "till@php.net"
+            "name":"Till Klampaeckel",
+            "email":"till@php.net"
         }
     ],
-    "repositories": [
+    "repositories":[
         {
-            "type": "package",
-            "package": {
-                "name": "zendframework/zendframework",
-                "version": "1.11.11",
-                "dist": {
-                    "url": "http://framework.zend.com/releases/ZendFramework-1.11.11/ZendFramework-1.11.11-minimal.zip",
-                    "type": "zip"
+            "type":"package",
+            "package":{
+                "name":"zendframework/zendframework",
+                "version":"1.11.11",
+                "dist":{
+                    "url":"http://framework.zend.com/releases/ZendFramework-1.11.11/ZendFramework-1.11.11-minimal.zip",
+                    "type":"zip"
                 }
             }
         }
     ],
-    "require": {},
-    "require-dev": {
-        "zendframework/zendframework": "1.11.*"
+    "require":{},
+    "require-dev":{
+        "zendframework/zendframework":"1.11.*"
     },
-    "autoload": {
-        "classmap": ["library"]
+    "autoload":{
+        "psr-0":{
+            "Rediska":"library"
+        }
     }
 }
