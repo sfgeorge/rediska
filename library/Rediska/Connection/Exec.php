@@ -112,6 +112,7 @@ class Rediska_Connection_Exec
 
         $this->_isWritten = false;
 
+$routing = 'A';
         if ($this->getResponseIterator() !== null) {
             if ($this->getResponseIterator() === true) {
                 $className = 'Rediska_Connection_Exec_MultiBulkIterator';
@@ -120,13 +121,24 @@ class Rediska_Connection_Exec
             }
 
             $response = new $className($this->getConnection(), $this->getResponseCallback());
+$routing .= ' B';
         } else {
             $response = self::readResponseFromConnection($this->getConnection());
+$routing .= ' C';
+if (!$response) {
+    $routing .= ' D';
+}
 
             if ($this->_responseCallback !== null) {
                 $response = call_user_func($this->getResponseCallback(), $response);
+$routing .= ' E';
             }
         }
+
+if (!$response) {
+    $routing .= ' D';
+    \Ifbyphone_Session_SaveHandler_Redis::log('[sessiondebug] '.__method__.'() retrieved response:'.str_replace("\n", ' ', var_export($response, true)).' with routing:'.$routing, __line__);
+}
 
         return $response;
     }
